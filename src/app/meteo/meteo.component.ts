@@ -18,15 +18,19 @@ export class MeteoComponent implements OnInit {
         return response.json()
     })
     .then(responsFormat => {
-      this.dataMeteoResp=responsFormat;
-      console.log(this.dataMeteoResp);
       var i = 0;
       var jour_suivant = new Array();
+      var jour_j = new Array();
+      jour_j.push({"day_date":responsFormat['current_condition']['date'],"day_hour":responsFormat['current_condition']['hour'],"day_icon":responsFormat['current_condition']['icon_big'],"day_tmp":responsFormat['current_condition']['tmp']});
+      //this.dataMeteoResp=responsFormat;
+      console.log(responsFormat);
       for(i=0;i<=4;i++){
         var lejour = "fcst_day_"+i;
-        jour_suivant.push({"day_date":responsFormat[lejour]['date'],"day_long":responsFormat[lejour]['day_long'],"day_icon":responsFormat[lejour]['icon_big'],"day_tmax":responsFormat[lejour]['tmin'],"day_tmin":responsFormat[lejour]['tmax']});
+        jour_suivant.push({"day_date":responsFormat[lejour]['date'],"day_long":responsFormat[lejour]['day_long'],"day_icon":responsFormat[lejour]['icon_big'],"day_tmax":responsFormat[lejour]['tmax'],"day_tmin":responsFormat[lejour]['tmin']});
       }
-      console.log(jour_suivant);
+      //console.log(jour_suivant);
+      this.dataMeteoResp=[jour_j,jour_suivant];
+      console.log(this.dataMeteoResp);
     })
     .catch(err => {
         console.error(err);
