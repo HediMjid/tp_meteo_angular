@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-meteo-suivant',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./meteo-suivant.component.css']
 })
 export class MeteoSuivantComponent implements OnInit {
+  @Input() data: any | undefined;
 
   constructor() { }
 

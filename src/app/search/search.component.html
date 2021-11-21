@@ -1,1 +1,3 @@
-<p>emplacement de la barre de recherche</p>
+<label for="item-input">Indiquez une ville:</label>
+<input type="text" id="item-input" #newItem>
+<button (click)="addNewItem(newItem.value)">Valider</button>

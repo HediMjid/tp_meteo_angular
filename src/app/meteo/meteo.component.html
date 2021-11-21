@@ -1,6 +1,9 @@
 <app-search></app-search>
 <app-meteo-jour [data]="dataMeteoResp"></app-meteo-jour>
+<div *ngFor="let day of dataMeteoResp[1] ; let i = index" class="jourSuivant">
+    <!-- {{day.day_long}} -->
+    <app-meteo-suivant [data]="day"></app-meteo-suivant>
+</div>
 
-<app-meteo-suivant></app-meteo-suivant>
 
-{{dataMeteoResp[0][0]['hour']}}
+<!-- {{dataMeteoResp[0][0]['day_hour']}} -->

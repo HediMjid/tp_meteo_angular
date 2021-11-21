@@ -12,7 +12,7 @@ export class MeteoComponent implements OnInit {
 
   ngOnInit(): void {
 
-    fetch("https://www.prevision-meteo.ch/services/json/Lyon")
+    fetch("https://www.prevision-meteo.ch/services/json/Paris")
     .then((response) => {
         console.log(response);
         return response.json()
@@ -21,7 +21,7 @@ export class MeteoComponent implements OnInit {
       var i = 0;
       var jour_suivant = new Array();
       var jour_j = new Array();
-      jour_j.push({"day_date":responsFormat['current_condition']['date'],"day_hour":responsFormat['current_condition']['hour'],"day_icon":responsFormat['current_condition']['icon_big'],"day_tmp":responsFormat['current_condition']['tmp']});
+      jour_j.push({"day_city":responsFormat['city_info']['name'],"day_date":responsFormat['current_condition']['date'],"day_hour":responsFormat['current_condition']['hour'],"day_icon":responsFormat['current_condition']['icon_big'],"day_tmp":responsFormat['current_condition']['tmp']});
       //this.dataMeteoResp=responsFormat;
       console.log(responsFormat);
       for(i=0;i<=4;i++){
