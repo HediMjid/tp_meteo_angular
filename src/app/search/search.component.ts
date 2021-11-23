@@ -11,7 +11,7 @@ export class SearchComponent implements OnInit {
 
   addNewItem(value: string) {
     this.newItemEvent.emit(value);
-    console.log(value);
+    //console.log(value);
   }
   constructor() { }
 

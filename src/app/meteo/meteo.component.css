@@ -1,3 +1,7 @@
 .jourSuivant{
     display:inline-flex;
 }
+
+.jourJ{
+    border:solid 1px #000;
+}
