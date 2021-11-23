@@ -10,14 +10,14 @@ export class MeteoComponent implements OnInit {
   
   constructor() { }
 
-  addItem(newItem: string) {
+  addItem(ville: string) {
     //this.items.push(newItem);
-    console.log(newItem);
-    this.getInfoVille(newItem);
+    console.log(ville);
+    this.getInfoVille(ville);
   }
 
-  getInfoVille(newItem: string){
-    fetch("https://www.prevision-meteo.ch/services/json/"+newItem)
+  getInfoVille(ville: string){
+    fetch("https://www.prevision-meteo.ch/services/json/"+ville)
     .then((response) => {
         console.log(response);
         return response.json()
