@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './meteo.component.html',
   styleUrls: ['./meteo.component.css']
 })
+
 export class MeteoComponent implements OnInit {
   dataMeteoResp  :any;
   
