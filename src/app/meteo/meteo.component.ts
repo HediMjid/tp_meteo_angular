@@ -11,7 +11,7 @@ export class MeteoComponent implements OnInit {
   
   constructor() { }
 
-  addItem(ville: string) {
+  addVille(ville: string) {
     //this.items.push(newItem);
     //console.log(ville);
     this.getInfoVille(ville);

@@ -7,10 +7,10 @@ import { Output, EventEmitter } from '@angular/core';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
-  @Output() newItemEvent = new EventEmitter<string>();
+  @Output() newVilleEvent = new EventEmitter<string>();
 
-  addNewItem(value: string) {
-    this.newItemEvent.emit(value);
+  selectNewVille(value: string) {
+    this.newVilleEvent.emit(value);
     //console.log(value);
   }
   constructor() { }
