@@ -1,6 +1,12 @@
-<app-search (newItemEvent)="addItem($event)"></app-search>
+<div>
+    <app-search (newItemEvent)="addItem($event)"></app-search>
+</div>
 
-<app-meteo-jour [data]="dataMeteoResp.jour_j"></app-meteo-jour>
+
+<div>
+    <app-meteo-jour [data]="dataMeteoResp.jour_j"></app-meteo-jour>
+</div>
+
 
 <div *ngFor="let day of dataMeteoResp.jour_suivants;" class="jourSuivant">
     <app-meteo-suivant [data]="day"></app-meteo-suivant>
