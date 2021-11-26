@@ -1,7 +1,10 @@
-<div>
+<div style="text-align: center; margin: 25px;">
     <h3>{{data.day_long}}</h3>
-    <p>{{data.day_tmin}}°</p>
-    <p>{{data.day_tmax}}°</p>
+    <p>{{data.day_date}}</p>
+    <p style="display:flex;justify-content: space-evenly">
+        <span style="color:blue">{{data.day_tmin}}°</span>
+        <span style="color:red">{{data.day_tmax}}°</span>
+    </p>
     <p><img src="{{data.day_icon}}"></p>
     
 </div>
