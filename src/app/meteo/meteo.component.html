@@ -1,8 +1,10 @@
 <div>
     <app-search (newVilleEvent)="addVille($event)"></app-search>
 </div>
-<p>ou <a  [routerLink]="['/ville/marseille']">Marseille</a></p>
-<p>ou <a  [routerLink]="['/ville/lille']">Lille</a></p>
+<p>ou <a  href="/ville/marseille">Marseille</a></p>
+<p>ou <a  href="/ville/lille">Lille</a></p>
+<!-- <p>ou <a  [routerLink]="['/ville/marseille']">Marseille</a></p>
+<p>ou <a  [routerLink]="['/ville/lille']">Lille</a></p> -->
 <div>
     <app-meteo-jour [data]="dataMeteoResp.jour_j"></app-meteo-jour>
 </div>
