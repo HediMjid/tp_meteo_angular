@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-meteo',
@@ -9,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class MeteoComponent implements OnInit {
   dataMeteoResp  :any;
   
-  constructor() { }
+  constructor(private route: ActivatedRoute) { }
 
   addVille(ville: string) {
     //this.items.push(newItem);
@@ -20,7 +21,7 @@ export class MeteoComponent implements OnInit {
   getInfoVille(ville: string){
     fetch("https://www.prevision-meteo.ch/services/json/"+ville)
     .then((response) => {
-        console.log(response);
+        //console.log(response);
         return response.json()
     })
     .then(responsFormat => {
@@ -51,7 +52,18 @@ export class MeteoComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getInfoVille('Paris');
+
+    const routeParams = this.route.snapshot.paramMap;
+    const productIdFromRoute = String(routeParams.get('villeId'));
+    
+    //console.log('-'+productIdFromRoute+'-');
+    if(productIdFromRoute != 'null'){
+      console.log('from route '+productIdFromRoute);
+      this.getInfoVille(productIdFromRoute);
+    }else{
+      console.log('default');
+      this.getInfoVille('Paris');
+    }
   }
 
 }
